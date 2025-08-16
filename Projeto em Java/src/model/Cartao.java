@@ -23,4 +23,13 @@ public class Cartao {
     public String getTipo (){
         return tipo;
     }
+
+    @Override
+    public String toString(){
+        return "Cartao{" +
+               "clube='" + clube + '\'' +
+               ", tipo='" + tipo + '\'' +
+               ", atleta='" + atleta + '\'' +
+               '}';
+    }
 }

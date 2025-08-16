@@ -41,4 +41,16 @@ public class Partida {
     public String getVencedorEstado (){
         return vencedorEstado;
     }
+
+    @Override
+    public String toString(){
+        return "Partida{" +
+               "mandante='" + mandante + '\'' +
+               ", visitante='" + visitante + '\'' +
+               ", vencedor='" + vencedor + '\'' +
+               ", placarMandante=" + placarMandante +
+               ", placarVisitante=" + placarVisitante +
+               ", vencedorEstado='" + vencedorEstado + '\'' +
+               '}';
+    }
 }

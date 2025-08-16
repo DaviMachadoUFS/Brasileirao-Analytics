@@ -23,4 +23,13 @@ public class Gol {
     public String getTipo (){
         return tipo;
     }
+
+    @Override
+    public String toString(){
+        return "Gol{" +
+               "clube='" + clube + '\'' +
+               ", atleta='" + atleta + '\'' +
+               ", tipo='" + tipo + '\'' +
+               '}';
+    }
 }
