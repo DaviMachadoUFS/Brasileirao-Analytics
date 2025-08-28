@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.brasileirao.analytic.PrimaryController">
+   <children>
+      <BarChart fx:id="graficoBarras" layoutX="36.0" layoutY="35.0" prefHeight="359.0" prefWidth="317.0" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="35.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <ComboBox fx:id="comboAtleta1" layoutX="176.0" layoutY="473.0" onAction="#selectAtleta1" prefWidth="150.0" promptText="Selecione o Atleta 1" AnchorPane.bottomAnchor="129.39999999999998" AnchorPane.rightAnchor="453.6" />
+      <Button fx:id="grafRegiao" layoutX="35.0" layoutY="473.0" mnemonicParsing="false" onAction="#gerarRegiao" text="Gráfico por Região" AnchorPane.bottomAnchor="129.39999999999998" AnchorPane.rightAnchor="629.8" />
+      <Button fx:id="grafAtleta" layoutX="348.0" layoutY="473.0" mnemonicParsing="false" onAction="#gerarAtleta" text="Gráfico por Atleta" AnchorPane.bottomAnchor="129.39999999999998" AnchorPane.rightAnchor="321.6" />
+      <ComboBox fx:id="comboTime1" layoutX="479.0" layoutY="473.0" onAction="#selectTime1" prefWidth="150.0" promptText="Selecione o Time 1" AnchorPane.bottomAnchor="129.39999999999998" AnchorPane.rightAnchor="150.60000000000002" />
+      <Button fx:id="grafTime" layoutX="640.0" layoutY="473.0" mnemonicParsing="false" onAction="#gerarTime" text="Gráfico por Time" AnchorPane.bottomAnchor="129.39999999999998" AnchorPane.rightAnchor="35.200000000000045" />
+      <PieChart fx:id="graficoPizza" layoutX="395.0" layoutY="35.0" prefHeight="359.0" prefWidth="350.0" AnchorPane.rightAnchor="34.400000000000034" AnchorPane.topAnchor="35.0" />
+      <CheckBox fx:id="selBarra" layoutX="333.0" layoutY="401.0" mnemonicParsing="false" text="Gráfico de Barras" AnchorPane.rightAnchor="334.2" />
+      <CheckBox fx:id="selPizza" layoutX="339.0" layoutY="436.0" mnemonicParsing="false" text="Gráfico de Pizza" AnchorPane.rightAnchor="333.8" />
+      <Button fx:id="compararTimes" layoutX="640.0" layoutY="519.0" mnemonicParsing="false" onAction="#compararTimes" text="Comparar Times" AnchorPane.bottomAnchor="83.4" AnchorPane.rightAnchor="36.8" />
+      <ComboBox fx:id="comboTime2" layoutX="479.0" layoutY="519.0" onAction="#selectTime2" prefWidth="150.0" promptText="Selecione o Time 2" AnchorPane.bottomAnchor="83.4" AnchorPane.rightAnchor="150.6" />
+      <Button fx:id="compararAtletas" layoutX="349.0" layoutY="519.0" mnemonicParsing="false" onAction="#compararAtletas" text="Comparar Atletas" AnchorPane.bottomAnchor="83.4" AnchorPane.rightAnchor="323.0" />
+      <ComboBox fx:id="comboAtleta2" layoutX="176.0" layoutY="519.0" onAction="#selectAtleta2" prefWidth="150.0" promptText="Selecione o Atleta 2" AnchorPane.bottomAnchor="83.4" AnchorPane.rightAnchor="453.6" />
+   </children>
+</AnchorPane>
