@@ -162,7 +162,7 @@ class MainWindow(QMainWindow):
             color = QColor(int(hash(label) * 123) % 255, int(hash(label) * 456) % 255, int(hash(label) * 789) % 255)
             
             self.grafico_scene.addRect(x0, y1, bar_width, bar_height,
-                                      QPen(Qt.black), QBrush(color))
+            QPen(Qt.black), QBrush(color))
             
             label_item = self.grafico_scene.addText(label)
             label_item.setPos(x0, y0 + 10)
@@ -177,7 +177,6 @@ class MainWindow(QMainWindow):
         width = self.grafico_view.width()
         height = self.grafico_view.height()
         
-        # Centraliza o gráfico de pizza e define o raio
         cx = width / 2
         cy = height / 2
         pizza_radius = min(width, height) / 3
@@ -185,7 +184,6 @@ class MainWindow(QMainWindow):
         total = sum(dados.values())
         start_angle = 90 * 16
 
-        # Posições para a legenda
         legenda_x = 20
         legenda_y = 50
         legenda_item_altura = 25
@@ -198,19 +196,15 @@ class MainWindow(QMainWindow):
             angle = (valor / total) * 360 * 16
             color = QColor(int(hash(label) * 123) % 255, int(hash(label) * 456) % 255, int(hash(label) * 789) % 255)
 
-            # Desenha a fatia da pizza
             path = QPainterPath()
             path.moveTo(cx, cy)
             path.arcTo(QRectF(cx - pizza_radius, cy - pizza_radius, pizza_radius * 2, pizza_radius * 2), start_angle / 16, angle / 16)
             path.closeSubpath()
             self.grafico_scene.addPath(path, QPen(Qt.black), QBrush(color))
             
-            # --- Desenha a legenda ao lado do gráfico ---
-            # Retângulo de cor
             legenda_cor_y = legenda_y + i * legenda_item_altura
             self.grafico_scene.addRect(legenda_x, legenda_cor_y, legenda_cor_largura, 10, QPen(Qt.black), QBrush(color))
             
-            # Texto da legenda
             legenda_texto = f"{label} ({valor})"
             self.grafico_scene.addText(legenda_texto).setPos(legenda_x + legenda_cor_largura + 5, legenda_cor_y - 5)
             
@@ -244,13 +238,13 @@ class MainWindow(QMainWindow):
 
             bar_height1 = (valor1 / max_valor) * (height - 2 * padding)
             self.grafico_scene.addRect(x_base, y_base - bar_height1, bar_width, bar_height1,
-                                                QPen(Qt.black), QBrush(color1))
+            QPen(Qt.black), QBrush(color1))
             self.grafico_scene.addText(str(valor1)).setPos(x_base, y_base - bar_height1 - 20)
             
             x_bar2 = x_base + bar_width + 5
             bar_height2 = (valor2 / max_valor) * (height - 2 * padding)
             self.grafico_scene.addRect(x_bar2, y_base - bar_height2, bar_width, bar_height2,
-                                                QPen(Qt.black), QBrush(color2))
+            QPen(Qt.black), QBrush(color2))
             self.grafico_scene.addText(str(valor2)).setPos(x_bar2, y_base - bar_height2 - 20)
             
             label_item = self.grafico_scene.addText(label)
